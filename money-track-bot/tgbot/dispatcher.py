@@ -26,12 +26,17 @@ from tgbot.handlers.broadcast_message.manage_data import CONFIRM_DECLINE_BROADCA
 from tgbot.handlers.broadcast_message.static_text import broadcast_command
 
 
+
+
+
 def setup_dispatcher(dp):
     """
     Adding handlers for events from Telegram
     """
     # onboarding
-    dp.add_handler(CommandHandler("start", onboarding_handlers.command_start))
+    dp.add_handler(CommandHandler("start", onboarding_handlers.start))
+    dp.add_handler(CommandHandler("start", onboarding_handlers.new))
+    
 
     # admin commands
     dp.add_handler(CommandHandler("admin", admin_handlers.admin))
